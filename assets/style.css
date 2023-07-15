@@ -92,6 +92,7 @@ header .navbar a{
     color: #fff;
 }
 
+
 header .navbar a.active,
 header .navbar a:hover{
     color: #fff;
@@ -134,75 +135,57 @@ header .icons #menu-bars{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* media query */
 
 
+/* media query */
 @media(max-width: 991px){
-  html{
-      font-size: 55%;
+    html{
+        font-size: 55%;
 
-  }
-  header{
-      padding: 1rem 2rem;
-  }
-  section{
-      padding:2rem;
-  }
+    }
+    header{
+        padding: 1rem 2rem;
+    }
+    section{
+        padding:2rem;
+    }
 }
 
 @media(max-width: 768px){
-  header .icons #menu-bars{
-      display: inline-block;
-  }
-  header .navbar{
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--black);
-      border-top: .1rem solid rgba(0,0,0,.2);
-      border-bottom: .1rem solid rgba(0,0,0,.2);
-      padding:1rem;
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  }
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        background:var(--black);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
 
-  header .navbar.active{
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  header .navbar a{
-      display:block;
-      padding:1.5rem;
-      margin: 1rem;
-      font-size: 2rem;
-      background: var(--red);
-  }
-  .home .box .content h3{
-      font-size:5rem;
-  }
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+       ;
+    }
+    header .navbar a{
+        display:block;
+        padding:1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background: var(--red);
+    }
+    .home .box .content h3{
+        font-size:5rem;
+    }
 }
 
 @media(max-width: 450px){
-  html{
-      font-size: 50%;
-  }
+    html{
+        font-size: 50%;
+    }
 }

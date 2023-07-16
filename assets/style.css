@@ -138,11 +138,10 @@ header .icons #menu-bars{
     background-position: center !important;
     justify-content:flex-end;
     padding:2rem 9%;
-}
-
-.home .box{
     justify-content: flex-start;
 }
+
+
 
 .home .box .content{
     width:50rem;
@@ -161,8 +160,6 @@ header .icons #menu-bars{
     font-size: 1.5rem;
     padding: 1rem 0;
 }
-
-
 
 
 
@@ -192,22 +189,21 @@ header .icons #menu-bars{
     header .icons #menu-bars{
         display: inline-block;
     }
-    header .navbar{
-        position: absolute;
-        top: 55px;
-        left: 0;
-        right: 0;
-        background:var(--black);
-        border-top: .1rem solid rgba(0,0,0,.2);
-        border-bottom: .1rem solid rgba(0,0,0,.2);
-        padding:1rem;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-
-    header .navbar.active{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-       ;
-    }
+    header .navbar {
+        position: fixed;
+        top: 6rem;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background: var(--black);
+        padding: 2rem;
+        transition: transform 0.3s ease;
+        z-index: 200 !important;
+      }
+      
+      header .navbar.active {
+        transform: translateX(-100%);
+      }
     header .navbar a{
         display:block;
         padding:1.5rem;

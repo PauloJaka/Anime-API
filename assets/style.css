@@ -48,6 +48,7 @@ header{
     align-items: center;
     justify-content: space-between;
     z-index: 10000;
+    position: fixed;
 }
 
 .heading{
@@ -124,6 +125,7 @@ header .icons #menu-bars{
     display: none;
 }
 
+
 .home{
     padding:0;
 }
@@ -161,10 +163,39 @@ header .icons #menu-bars{
     padding: 1rem 0;
 }
 
+.anime{
+    padding:5rem;
+}
 
+.anime .box{
+    width: 299px;
+    height:168px;
+    margin-bottom: 150px; /* Espaço abaixo da caixa */
+    background-size: cover;
+    background-size: contain;
+}
 
+.anime .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+.anime .content h3{
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
 
+.anime .content P{
+    font-size: 1.2rem;
+    color:#fff;
+    text-decoration: none;
 
+}
+.anime .content h3 {
+    margin-top: 18rem;
+}
 
 
 
@@ -183,6 +214,10 @@ header .icons #menu-bars{
     section{
         padding:2rem;
     }
+    .anime .content h3 {
+        margin-top: 20rem;
+    }
+
 }
 
 @media(max-width: 768px){
@@ -194,11 +229,12 @@ header .icons #menu-bars{
         top: 6rem;
         right: -100%;
         width: 70%;
-        height: 100%;
+        height: 35%;
         background: var(--black);
         padding: 2rem;
         transition: transform 0.3s ease;
         z-index: 200 !important;
+        border-radius: 10px;
       }
       
       header .navbar.active {
@@ -220,4 +256,8 @@ header .icons #menu-bars{
     html{
         font-size: 50%;
     }
+    .anime .content h3 {
+        margin-top: 22rem;
+    }
+
 }

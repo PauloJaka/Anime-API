@@ -170,7 +170,7 @@ header .icons #menu-bars{
 .anime .box{
     width: 299px;
     height:168px;
-    margin-bottom: 150px; /* Espaço abaixo da caixa */
+    margin-bottom: 150px; 
     background-size: cover;
     background-size: contain;
 }
@@ -197,6 +197,76 @@ header .icons #menu-bars{
     margin-top: 18rem;
 }
 
+.action{
+    padding:5rem;
+}
+
+.action .box{
+   width:299px;
+   height:168px;
+   margin-bottom: 150px; 
+   background-size: cover;
+   background-size: contain;
+}
+
+.action .content h3{
+    font-size: 1.7rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.action .content P{
+    font-size: 1.2rem;
+    color:#fff;
+    text-decoration: none;
+
+}
+.action .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.action .content h3 {
+    margin-top: 18rem;
+}
+
+.child{
+    padding:5rem;
+}
+
+.child .box{
+    width:299px;
+    height:168px;
+    margin-bottom: 150px; 
+    background-size: cover;
+    background-size: contain;
+ }
+
+ .child .content h3{
+     font-size: 1.7rem;
+     color: #ffffff;
+     text-transform: uppercase;
+     text-align: center;
+ }
+
+ .child .content P{
+     font-size: 1.2rem;
+     color:#fff;
+     text-decoration: none;
+ }
+
+ .child .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.child .content h3 {
+    margin-top: 18rem;
+}
+
 
 
 /* media query */
@@ -214,7 +284,9 @@ header .icons #menu-bars{
     section{
         padding:2rem;
     }
-    .anime .content h3 {
+    .anime .content h3,
+    .action .content h3,
+    .child .content h3 {
         margin-top: 20rem;
     }
 
@@ -256,7 +328,9 @@ header .icons #menu-bars{
     html{
         font-size: 50%;
     }
-    .anime .content h3 {
+    .anime .content h3,
+    .action .content h3,
+    .child .content h3 {
         margin-top: 22rem;
     }
 

@@ -1,4 +1,4 @@
-const animeIds = [38000, 40748, 39535, 5114, 41467, 11061, 37521, 21, 54898, 44511, 30276, 31181, 20583, 54112, 37105, 49596, 12115, 34572, 22199, 199, 431, 164, 2890, 32281];
+const animeIds = [38000, 40748, 39535, 5114, 41467, 11061, 37521, 21, 54898, 44511, 30276, 31181, 20583, 54112, 37105, 49596, 12115, 34572, 22199, 199, 431, 164, 2890, 32281, 11757, 22319, 20, 20507, 23755, 10620, 37779, 6702, 38691, 11111, 28999, 35790, 15809, 11617, 26243, 42897, 38671];
 
 const animeDataArray = [];
 
@@ -102,6 +102,8 @@ const createA = () => {
 
 let sectionAnimes = 0;
 let slidesSectionAnimes = 5;
+let actionSectionAnimes = 15;
+let childSectionAnimes = 25;
 
 const sectionSlides = () => {
   const wrapper = document.querySelector('.swiper-wrapper');
@@ -158,6 +160,64 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.log(error));
 });
 
+const actionSectionSlides = () => {
+  const swiperWrapper = document.querySelector('.swiper.action-slider .swiper-wrapper');
+  const slideDiv = createDiv('swiper-slide');
+  const boxDiv = createBoxDivAnimeSection(animeDataArray[actionSectionAnimes].sectionImages);
+  const contentDiv = createDiv('content');
+  const h3Element = createH3element(animeDataArray[actionSectionAnimes].title);
+  const pElement = createP(animeDataArray[actionSectionAnimes].synopsis);
+  const aElement = createA();
+
+  swiperWrapper.appendChild(slideDiv);
+  slideDiv.appendChild(boxDiv);
+  boxDiv.appendChild(contentDiv);
+  contentDiv.appendChild(h3Element);
+  contentDiv.appendChild(pElement);
+  contentDiv.appendChild(aElement);
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchAwaitAnimeData()
+    .then(() => {
+      for (let i = 0; i < 10; i++) {
+        actionSectionSlides();
+        actionSectionAnimes++;
+      }
+    })
+    .catch(error => console.log(error));
+});
+
+const childSectionSlides = () => {
+  const swiperWrapper = document.querySelector('.swiper.child-slider .swiper-wrapper');
+  const slideDiv = createDiv('swiper-slide');
+  const boxDiv = createBoxDivAnimeSection(animeDataArray[childSectionAnimes].sectionImages);
+  const contentDiv = createDiv('content');
+  const h3Element = createH3element(animeDataArray[childSectionAnimes].title);
+  const pElement = createP(animeDataArray[childSectionAnimes].synopsis);
+  const aElement = createA();
+
+  swiperWrapper.appendChild(slideDiv);
+  slideDiv.appendChild(boxDiv);
+  boxDiv.appendChild(contentDiv);
+  contentDiv.appendChild(h3Element);
+  contentDiv.appendChild(pElement);
+  contentDiv.appendChild(aElement);
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchAwaitAnimeData()
+    .then(() => {
+      for (let i = 0; i < 10; i++) {
+        childSectionSlides();
+        childSectionAnimes++;
+      }
+    })
+    .catch(error => console.log(error));
+});
+
 
 
 var swiper = new Swiper(".home-slider", {
@@ -194,7 +254,7 @@ const getSlidesPerView = (windowWidth) => {
   }
 };
 
-var swiper = new Swiper(".anime-slider", {
+let animeSwiper = new Swiper(".anime-slider", {
   slidesPerView: getSlidesPerView(window.innerWidth),
   spaceBetween: 30,
   centeredSlides: true,
@@ -209,8 +269,35 @@ var swiper = new Swiper(".anime-slider", {
   loop: false
 });
 
-window.addEventListener('resize', updateSwiper);
-updateSwiper();
+let actionSwiper = new Swiper(".action-slider", {
+  slidesPerView: getSlidesPerView(window.innerWidth),
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 4500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  loop: false
+});
+
+let childSwiper = new Swiper(".child-slider", {
+  slidesPerView: getSlidesPerView(window.innerWidth),
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 4500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  loop: false
+});
 
 
 

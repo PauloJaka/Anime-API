@@ -267,6 +267,59 @@ header .icons #menu-bars{
     margin-top: 18rem;
 }
 
+.family{
+    padding:5rem;
+}
+
+.family .box{
+    width:299px;
+    height:168px;
+    margin-bottom: 150px; 
+    background-size: cover;
+    background-size: contain;
+ }
+
+ .family .content h3{
+     font-size: 1.7rem;
+     color: #ffffff;
+     text-transform: uppercase;
+     text-align: center;
+ }
+
+ .family .content P{
+     font-size: 1.2rem;
+     color:#fff;
+     text-decoration: none;
+ }
+ .family .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.family .content h3 {
+    margin-top: 18rem;
+}
+
+.copyright{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.copyright .logo{
+    color: var(--red);
+    font-size: 2.1rem;
+    font-weight: bolder;
+}
+
+.copyright p{
+    font-size: 0.9rem;
+    color: var(--red);
+    font-size:2rem;
+}
+
+
 
 
 /* media query */
@@ -286,7 +339,8 @@ header .icons #menu-bars{
     }
     .anime .content h3,
     .action .content h3,
-    .child .content h3 {
+    .child .content h3,
+    .family .content h3 {
         margin-top: 20rem;
     }
 
@@ -330,7 +384,8 @@ header .icons #menu-bars{
     }
     .anime .content h3,
     .action .content h3,
-    .child .content h3 {
+    .child .content h3,
+    .family .content h3 {
         margin-top: 22rem;
     }
 

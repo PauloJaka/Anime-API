@@ -97,6 +97,7 @@ const createA = () => {
   const a = document.createElement('a');
   a.classList.add('btn');
   a.textContent = 'Download';
+  a.href = 'download.html';
   return a;
 };
 
@@ -104,6 +105,7 @@ let sectionAnimes = 0;
 let slidesSectionAnimes = 5;
 let actionSectionAnimes = 15;
 let childSectionAnimes = 25;
+let familSectionAnimes = 35;
 
 const sectionSlides = () => {
   const wrapper = document.querySelector('.swiper-wrapper');
@@ -218,6 +220,56 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.log(error));
 });
 
+const familySectionSlides = () => {
+  const swiperWrapper = document.querySelector('.swiper.family-slider .swiper-wrapper');
+  const slideDiv = createDiv('swiper-slide');
+  const boxDiv = createBoxDivAnimeSection(animeDataArray[familSectionAnimes].sectionImages);
+  const contentDiv = createDiv('content');
+  const h3Element = createH3element(animeDataArray[familSectionAnimes].title);
+  const pElement = createP(animeDataArray[familSectionAnimes].synopsis);
+  const aElement = createA();
+
+  swiperWrapper.appendChild(slideDiv);
+  slideDiv.appendChild(boxDiv);
+  boxDiv.appendChild(contentDiv);
+  contentDiv.appendChild(h3Element);
+  contentDiv.appendChild(pElement);
+  contentDiv.appendChild(aElement);
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchAwaitAnimeData()
+    .then(() => {
+      for (let i = 0; i < 10; i++) {
+        familySectionSlides();
+        familSectionAnimes++;
+      }
+    })
+    .catch(error => console.log(error));
+});
+
+const footer = () => {
+  const lastSection = document.querySelector('.family');
+  const copyrightDiv = createDiv('copyright');
+  const aLogo = document.createElement('a');
+  const iLogo = document.createElement('i');
+  const copyrightP = createP('')
+
+  copyrightP.textContent = 'JakaPaulo. All rights reserved'
+  copyrightDiv.classList.add('container')
+  aLogo.classList.add('logo');
+  iLogo.classList.add('fas', 'fa-infinity');
+  aLogo.textContent = 'Anime';
+
+lastSection.insertAdjacentElement('afterend', copyrightDiv);
+copyrightDiv.appendChild(aLogo);
+copyrightDiv.appendChild(copyrightP);
+aLogo.appendChild(iLogo);
+
+}
+footer();
+
 
 
 var swiper = new Swiper(".home-slider", {
@@ -235,14 +287,26 @@ var swiper = new Swiper(".home-slider", {
   },
 });
 
+
 const updateSwiper = () => {
   const windowWidth = window.innerWidth;
-
   let slidesPerView = getSlidesPerView(windowWidth);
 
-  swiper.params.slidesPerView = slidesPerView;
-  swiper.update();
+  animeSwiper.params.slidesPerView = slidesPerView;
+  animeSwiper.update();
+
+  actionSwiper.params.slidesPerView = slidesPerView;
+  actionSwiper.update();
+
+  childSwiper.params.slidesPerView = slidesPerView;
+  childSwiper.update();
+
+  familySwiper.params.slidesPerView = slidesPerView;
+  familySwiper.update();
 };
+
+window.addEventListener('resize', updateSwiper);
+
 
 const getSlidesPerView = (windowWidth) => {
   if (windowWidth >= 992) {
@@ -269,6 +333,7 @@ let animeSwiper = new Swiper(".anime-slider", {
   loop: false
 });
 
+
 let actionSwiper = new Swiper(".action-slider", {
   slidesPerView: getSlidesPerView(window.innerWidth),
   spaceBetween: 30,
@@ -283,6 +348,9 @@ let actionSwiper = new Swiper(".action-slider", {
   },
   loop: false
 });
+
+
+
 
 let childSwiper = new Swiper(".child-slider", {
   slidesPerView: getSlidesPerView(window.innerWidth),
@@ -299,5 +367,20 @@ let childSwiper = new Swiper(".child-slider", {
   loop: false
 });
 
+
+let familySwiper = new Swiper(".family-slider", {
+  slidesPerView: getSlidesPerView(window.innerWidth),
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 4500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  loop: false
+});
 
 
